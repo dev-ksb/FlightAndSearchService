@@ -19,3 +19,9 @@
 }
 ```
 - Once above steps performed, go to the src folder from terminal and execute `npx sequelize db:create`
+
+## DB Design
+- Airplane table
+- Flight
+- Airport
+- City
