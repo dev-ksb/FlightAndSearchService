@@ -1,5 +1,6 @@
 const express = require("express");
 const { PORT } = require("./config/serverConfig");
+const CityRepository = require("./repository/city-repository")
 
 const setupAndStartSearch = async () => {
 
@@ -8,8 +9,10 @@ const setupAndStartSearch = async () => {
     app.use(express.urlencoded({
         extended: true
     }))
-    app.listen(PORT, () => {
+    app.listen(PORT, async () => {
         console.log(`Server started at ${PORT}`);
+        const city = new CityRepository()
+        await city.createCity({name: "New Delhi"});
     })
 }
 
